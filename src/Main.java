@@ -3,8 +3,8 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         PostManager postManager = new PostManager();
-        System.out.println("== Social Media Post Manager ==");
 
+        System.out.println("== Social Media Post Manager ==");
         int engagementScore = postManager.calculateEngagement(150, 75, 25);
         String category = postManager.getCategoryRating(engagementScore);
         postManager.displayPostStats("Java Programming Tips", engagementScore, category);
@@ -23,7 +23,7 @@ public class Main {
         Collections.sort(trendingPosts);
         System.out.println("Trending Posts: " + trendingPosts);
 
-        List<String> uniqueAuthors = postManager.getUniqueAuthors("Alice", "Bob", "Charlie", "Alice", "Bob");
-        System.out.println("Unique Authors: " + uniqueAuthors);
+        HashSet<String> authors = postManager.getUniqueAuthors("Alice", "Bob", "Alice", "Charlie", "Bob");
+        System.out.println("Unique Authors: " + authors);
     }
 }
