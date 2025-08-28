@@ -61,15 +61,9 @@ public class PostManager {
         return trending;
     }
 
-    public List<String> getUniqueAuthors(String... authors) {
-        List<String> uniqueAuthors = new ArrayList<>();
-        Set<String> seen = new HashSet<>();
-        for (String author : authors) {
-            if (!seen.contains(author)) {
-                seen.add(author);
-                uniqueAuthors.add(author);
-            }
-        }
-        return uniqueAuthors;
+    public HashSet<String> getUniqueAuthors(String... authors) {
+        if (authors == null) return new HashSet<>();
+
+        return new LinkedHashSet<>(Arrays.asList(authors));
     }
 }
