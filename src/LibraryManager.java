@@ -54,7 +54,6 @@ public class LibraryManager {
             System.out.println("Error: " + e.getMessage());
         } finally {
             System.out.println("Add book operation completed.");
-            showBooks();
         }
     }
     public void removeBook() {
@@ -88,7 +87,6 @@ public class LibraryManager {
             System.out.println("Error: " + e.getMessage());
         } finally {
             System.out.println("Remove book operation completed.");
-            showBooks();
         }
     }
 }
