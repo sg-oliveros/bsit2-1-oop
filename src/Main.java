@@ -1,15 +1,15 @@
 public class Main {
     public static void main(String[] args) {
-        LibraryManager manager = new LibraryManager();
+        LibraryManager library = new LibraryManager();
         System.out.println("≡ Library Management System ≡");
 
-        manager.showBooks();
-        manager.addBook();
-        manager.addBook();
-        manager.addBook();
-        manager.removeBook();
-        manager.removeBook();
-        manager.removeBook();
+        library.showBooks();
+        library.addBook();
+        library.addBook();
+        library.addBook();
+        library.removeBook();
+        library.removeBook();
+        library.removeBook();
 
         System.out.println("\nProgram completed successfully.");
     }
