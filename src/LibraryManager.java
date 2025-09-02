@@ -1,31 +1,41 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class LibraryManager {
-    ArrayList<String> books = new ArrayList<>(Arrays.asList("Java Programming","Web Development","Database Design"));
+    private ArrayList<String> books;
+    private Scanner scanner;
 
-    Scanner scanner = new Scanner(System.in);
+    public LibraryManager() {
+        books = new ArrayList<>();
+        books.add("Java Programming");
+        books.add("Web Development");
+        books.add("Database Design");
+        scanner = new Scanner(System.in);
+    }
+
     public void showBooks() {
-        try{
+        System.out.println("\n--- Current Books ---");
+
+        try {
             if (books == null) {
                 throw new IllegalStateException("Book list is not initialized!");
             }
-            System.out.println("\n--- Current Books ---");
+
             if (books.isEmpty()) {
-                System.out.println("Currently no books available in the library.");
+                System.out.println("There are no books available in the library.");
             } else {
                 for (int i = 0; i < books.size(); i++) {
                     System.out.println((i + 1) + ". " + books.get(i));
                 }
             }
+
         } catch (IllegalStateException e) {
             System.out.println("Error: " + e.getMessage());
         } finally {
             System.out.println("Display operation completed.");
         }
-
     }
+
     public void addBook() {
         try {
             System.out.print("\nEnter book title to add: ");
@@ -44,6 +54,7 @@ public class LibraryManager {
             System.out.println("Error: " + e.getMessage());
         } finally {
             System.out.println("Add book operation completed.");
+            showBooks();
         }
     }
     public void removeBook() {
@@ -77,6 +88,7 @@ public class LibraryManager {
             System.out.println("Error: " + e.getMessage());
         } finally {
             System.out.println("Remove book operation completed.");
+            showBooks();
         }
     }
 }
