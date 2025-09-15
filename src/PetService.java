@@ -3,17 +3,14 @@ public class PetService {
     private static final double VACCINATION_FEE = 25.0;
     private static final double GROOMING_FEE = 30.0;
 
-    // No-parameter method
     public double calculateFee() {
         return BASE_FEE;
     }
 
-    // Overloaded with 1 boolean
     public double calculateFee(boolean withVaccination) {
         return withVaccination ? BASE_FEE + VACCINATION_FEE : BASE_FEE;
     }
 
-    // Overloaded with 2 booleans
     public double calculateFee(boolean withVaccination, boolean withGrooming) {
         double total = BASE_FEE;
         if (withVaccination) total += VACCINATION_FEE;
@@ -21,7 +18,6 @@ public class PetService {
         return total;
     }
 
-    // Overloaded with String parameter
     public double calculateFee(String emergencyType) {
         return 200.0;
     }

@@ -1,9 +1,7 @@
-// Interface for trainable pets
 interface Trainable {
     void performTrick();
 }
 
-// Abstract Pet class
 abstract class Pet {
     protected String name;
     protected int age;
@@ -23,7 +21,6 @@ abstract class Pet {
     }
 }
 
-// Dog subclass
 class Dog extends Pet implements Trainable {
     public Dog(String name, int age) {
         super(name, age);
@@ -40,7 +37,6 @@ class Dog extends Pet implements Trainable {
     }
 }
 
-// Cat subclass
 class Cat extends Pet {
     public Cat(String name, int age) {
         super(name, age);
@@ -52,7 +48,6 @@ class Cat extends Pet {
     }
 }
 
-// Bird subclass
 class Bird extends Pet implements Trainable {
     public Bird(String name, int age) {
         super(name, age);
