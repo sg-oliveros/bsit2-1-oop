@@ -1,6 +1,5 @@
 public class Main {
     public static void main(String[] args) {
-        // Create different media items
         Book book1 = new Book("Java Fundamentals", "B001", "Robert Martin");
         DVD dvd1 = new DVD("OOP Concepts", "D001", "Tech Films");
         Magazine mag1 = new Magazine("Programming Weekly", "M001", 15);
@@ -18,14 +17,12 @@ public class Main {
         System.out.println("\n=== Borrowing Test ===");
         student.borrowMedia(book1);
         teacher.borrowMedia(dvd1);
-        student.borrowMedia(book1); // Should fail - already borrowed
+        student.borrowMedia(book1);
 
-        // Test returning
         System.out.println("\n=== Returning Test ===");
         student.returnMedia(book1);
         librarian.borrowMedia(book1);
 
-        // Display user information
         System.out.println("\n=== User Information ===");
         displayUserInfo(student);
         displayUserInfo(teacher);
